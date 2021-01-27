@@ -17,7 +17,8 @@ a
 	font-family: $fonts
 ul, li, a
 	+transitions(.3s)
-
+.w280
+	width: 280px
 .mega-menu
 	max-width: 1280px
 	background: $menucolor
@@ -35,16 +36,50 @@ ul, li, a
 			padding: 0 16px
 			display: block
 			&:hover
+				color: #fff
+				background: darken($menucolor, 8%)
 				+
 					ul.level-2-container
 						min-height: 50px
 						height: auto
+						display: block
 		ul.level-2-container
 			height: 0
-			overflow: hidden
+			display: none
 			position: absolute
-			width: 300px
 			top: 50px
 			background: lighten($menucolor, 8%)
+			padding-left: 0
 			&:hover
 				height: auto
+				display: block
+			li.level-2
+				position: relative
+				list-style-type: none
+				a
+					&:hover
+						+
+							ul.level-3-container
+								min-width: 100px
+								min-height: 50px
+								width: auto
+								height: auto
+								display: block
+				ul.level-3-container
+					width: 0
+					height: 0
+					position: absolute
+					display: none
+					left: 100%
+					top: 0
+					background: lighten($menucolor, 8.8%)
+					padding-left: 0
+					&:hover
+						width: auto
+						height: auto
+						display: block
+					li.level-3
+						list-style-type: none
+						a
+							word-wrap: none
+							white-space: nowrap
