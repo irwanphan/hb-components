@@ -69,6 +69,7 @@ header
 			border: 1px solid #777
 			padding: 0 16px
 			position: relative
+			background: #fff
 			input[type="search"]
 				height: 50px
 				line-height: 50px
@@ -189,13 +190,59 @@ header
 	@media ( max-width: 640px )
 		li.level-1
 			display: block
-@media ( max-width: 640px )
-	.desktop-only
-		display: none !important
 @media ( min-width: 641px )
 	.mobile-only
 		display: none !important
 
+@media ( max-width: 640px )
+	.desktop-only
+		display: none !important
+	// on mobile
+	header
+		position: relative
+		display: block
+		.header-menu
+			position: absolute
+			top: 50px
+			display: none
+		.middle
+			.account-menu
+				position: absolute
+				top: 50px
+				display: none
+				a
+					color: #333
+					text-transform: uppercase
+					height: 50px
+					line-height: 50px
+					padding: 0 16px
+					display: block
+					font-weight: 600
+					font-size: 16px
+					background: $menucolor
+			.search-container
+				position: absolute
+				top: 50px
+				display: none
+	#menu-1:checked
+		~
+			.header-menu
+				display: block
+				width: 100%
+				text-align: center
+	#menu-2:checked
+		~
+			.middle
+				.search-container
+					display: block
+					width: 100%
+	#menu-3:checked
+		~
+			.middle
+				.account-menu
+					width: 100%
+					text-align: center
+					display: block
 .mobile-logo
 	width: 100%
 	text-align: center
