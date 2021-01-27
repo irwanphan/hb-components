@@ -15,10 +15,10 @@
 
 <header>
 
-    <input type="checkbox" name="" class="main-thumb-menu" id="menu-1">
-    <input type="checkbox" name="" class="main-thumb-menu" id="menu-2">
-    <input type="checkbox" name="" class="main-thumb-menu" id="menu-3">
-    <input type="checkbox" name="" class="main-thumb-menu" id="menu-4">
+    <input type="checkbox" name="" class="main-thumb-menu" id="menu-1" onchange="cbChange(this)">
+    <input type="checkbox" name="" class="main-thumb-menu" id="menu-2" onchange="cbChange(this)">
+    <input type="checkbox" name="" class="main-thumb-menu" id="menu-3" onchange="cbChange(this)">
+    <input type="checkbox" name="" class="main-thumb-menu" id="menu-4" onchange="cbChange(this)">
 
     <nav class="main-menu mobile-only">
         <label for="menu-1" class="main-thumb-menu-label"><img src="img/menu-24px.svg" alt=""></label>
@@ -26,6 +26,17 @@
         <label for="menu-3" class="main-thumb-menu-label"><img src="img/face-24px.svg" alt=""></label>
         <label for="menu-4" class="main-thumb-menu-label"><img src="img/shopping_cart-24px.svg" alt=""></label>
     </nav>
+
+    <script>
+        function cbChange(obj) {
+            let updateCheck = obj.checked;
+            var cbs = document.getElementsByClassName("main-thumb-menu");
+            for (var i = 0; i < cbs.length; i++) {
+                cbs[i].checked = false;
+            }
+            obj.checked = updateCheck;
+        }
+    </script>
 
     <div class="top">
         <span class="right desktop-only">
