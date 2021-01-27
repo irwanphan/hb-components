@@ -21,7 +21,7 @@ a
 	font-family: $fonts
 ul, li, a
 	+transitions(.3s)
-button, a
+button, a, label
 	cursor: pointer
 .w280
 	width: 280px
@@ -36,7 +36,7 @@ header
 		line-height: 40px
 		padding: 0 16px
 		.social
-
+			// 
 		span.right
 			display: block
 			text-align: right
@@ -112,16 +112,35 @@ header
 			line-height: 50px
 			padding: 0 16px
 			display: block
-			&:hover
-				color: darken($menucolor, 28%)
+			@media screen and ( min-width: 641px )
+				&:hover
+					color: darken($menucolor, 28%)
+					+
+						ul.level-2-container
+							height: auto
+							display: block
+						div.level-2-container.columns
+							height: auto
+							display: flex
+		label.expand-sign
+			position: absolute
+			right: 0
+			top: 0
+			width: 50px
+			height: 50px
+			line-height: 40px
+			font-size: 20px
+			display: block
+		.menu-children-expand
+			display: none
+			&:checked
 				+
 					ul.level-2-container
-						// min-height: 50px
+						display: contents
 						height: auto
-						display: block
-					div.level-2-container.columns
-						height: auto
-						display: flex
+						li.level-2
+							a
+								font-weight: 400
 		ul.level-2-container
 			height: 0
 			display: none
@@ -139,8 +158,6 @@ header
 					&:hover
 						+
 							ul.level-3-container
-								// min-width: 100px
-								// min-height: 50px
 								width: auto
 								height: auto
 								display: block
