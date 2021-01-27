@@ -141,6 +141,12 @@ header
 						li.level-2
 							a
 								font-weight: 400
+					div.level-2-container.columns
+						display: contents
+						.column
+							a
+								font-weight: 400
+								font-size: 16px
 		ul.level-2-container
 			height: 0
 			display: none
@@ -199,6 +205,7 @@ header
 				font-size: 14px
 				white-space: nowrap
 			.lists
+				@extend .desktop-only
 				a
 					font-size: 12px
 					display: block
