@@ -1,6 +1,50 @@
+$browsers: '', '-moz-', '-webkit-'
+=transitions ($sec, $type: all, $accel: ease)
+	@each $browser in $browsers
+		#{$browser}transition: $type $sec $accel
+=borderradius ($radius: 50%)
+	@each $browser in $browsers
+		#{$browser}border-radius: $radius
+=boxsizing ($type: border-box)
+	@each $browser in $browsers
+		#{$browser}box-sizing: $type
 $menucolor: #88a8ff
+$fonts: "Montserrat",georgia,serif
+*
+	+boxsizing
+a
+	text-decoration: none
+	font-family: $fonts
+ul, li, a
+	+transitions(.3s)
 
 .mega-menu
-    max-width: 1280px
-    background: $menucolor
-    
+	max-width: 1280px
+	background: $menucolor
+	margin: 0 auto
+	padding: 0
+	li.level-1
+		display: inline-block
+		font-weight: 600
+		position: relative
+		a
+			color: #333
+			text-transform: uppercase
+			height: 50px
+			line-height: 50px
+			padding: 0 16px
+			display: block
+			&:hover
+				+
+					ul.level-2-container
+						min-height: 50px
+						height: auto
+		ul.level-2-container
+			height: 0
+			overflow: hidden
+			position: absolute
+			width: 300px
+			top: 50px
+			background: lighten($menucolor, 8%)
+			&:hover
+				height: auto
