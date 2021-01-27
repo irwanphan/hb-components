@@ -12,6 +12,9 @@ $menucolor: #88a8ff
 $fonts: "Montserrat",georgia,serif
 *
 	+boxsizing
+body
+	margin: 0
+	padding: 0
 a
 	text-decoration: none
 	font-family: $fonts
@@ -19,7 +22,7 @@ ul, li, a
 	+transitions(.3s)
 .w280
 	width: 280px
-.mega-menu
+.header-menu
 	max-width: 1280px
 	background: $menucolor
 	margin: 0 auto
@@ -36,13 +39,15 @@ ul, li, a
 			padding: 0 16px
 			display: block
 			&:hover
-				color: #fff
-				background: darken($menucolor, 8%)
+				color: darken($menucolor, 28%)
 				+
 					ul.level-2-container
-						min-height: 50px
+						// min-height: 50px
 						height: auto
 						display: block
+					div.level-2-container.columns
+						height: auto
+						display: flex
 		ul.level-2-container
 			height: 0
 			display: none
@@ -60,8 +65,8 @@ ul, li, a
 					&:hover
 						+
 							ul.level-3-container
-								min-width: 100px
-								min-height: 50px
+								// min-width: 100px
+								// min-height: 50px
 								width: auto
 								height: auto
 								display: block
@@ -83,3 +88,29 @@ ul, li, a
 						a
 							word-wrap: none
 							white-space: nowrap
+		div.level-2-container.columns
+			height: 0
+			display: none
+			position: absolute
+			top: 50px
+			background: lighten($menucolor, 8%)
+			padding-left: 0
+			.column
+				display: block
+				flex-basis: 0
+				flex-grow: 1
+				flex-shrink: 1
+				padding: 0 8px
+			&:hover
+				height: auto
+				display: flex
+			a
+				font-size: 14px
+				white-space: nowrap
+			.lists
+				a
+					font-size: 12px
+					display: block
+					height: 32px
+					line-height: 32px
+			
