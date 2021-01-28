@@ -285,16 +285,18 @@
     let scrollpos = window.scrollY
     const header = document.querySelector(".header-menu")
     const badges = document.querySelector(".top-badges")
-    // const header_height = header.offsetHeight
+    // const mainmenu = document.querySelector(".main-menu")
     const header_height = 140
 
     const add_class_on_scroll = () => {
         header.classList.add("sticky")
         badges.classList.add("scrolled")
+        // mainmenu.classList.add("sticky")
     }
     const remove_class_on_scroll = () => {
         header.classList.remove("sticky")
         badges.classList.remove("scrolled")
+        // mainmenu.classList.remove("sticky")
     }
 
     window.addEventListener('scroll', function() { 
