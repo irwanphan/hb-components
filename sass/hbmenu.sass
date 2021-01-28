@@ -237,21 +237,24 @@ header
 			background: lighten($menucolor, 8%)
 			padding-left: 0
 			@media screen and ( min-width: 641px )
-				padding-bottom: 24px
+				padding-bottom: 16px
+				a.menu-banner
+					min-height: 112px
+					text-align: left
 			.column
 				display: table
 				flex-basis: 0
 				flex-grow: 1
 				flex-shrink: 1
 				padding: 0 8px
+				@media screen and ( max-width: 640px )
+					display: block
 			&:hover
 				height: auto
 				display: flex
 			a.menu-banner
 				font-size: 14px
 				white-space: nowrap
-				// display: contents
-				min-height: 112px
 				img
 					margin-top: 24px
 					display: block
@@ -259,8 +262,9 @@ header
 					+borderradius(8px)
 					@extend .desktop-only
 				span
+					text-align: center
 					height: 40px
-					display: block
+					width: 100%
 			.lists
 				@extend .desktop-only
 				a
