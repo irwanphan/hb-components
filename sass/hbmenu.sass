@@ -16,6 +16,7 @@ body
 	margin: 0
 	padding: 0
 	font-family: $fonts
+	min-height: 1900px
 a
 	text-decoration: none
 	font-family: $fonts
@@ -36,6 +37,7 @@ header
 		.top-badges
 			position: fixed
 			top: 0
+			+transitions(.3s)
 			a
 				display: inline-block
 				color: #fff
@@ -56,6 +58,8 @@ header
 					vertical-align: middle
 				span
 					@extend .desktop-only
+			&.scrolled
+				top: 50px
 		span.right
 			height: 40px
 			line-height: 40px
@@ -135,6 +139,11 @@ header
 	background: $menucolor
 	padding: 0
 	margin: 0
+	&.sticky
+		position: fixed
+		top: 0
+		max-width: 1280px
+		width: 100%
 	li.level-1
 		display: inline-block
 		font-weight: 600
@@ -348,6 +357,6 @@ header
 		height: 50px
 		line-height: 64px
 		cursor: pointer
-		img
-			&:hover, &:focus, &:active
-				filter: invert(37%) sepia(71%) saturate(3678%) hue-rotate(206deg) brightness(77%) contrast(97%)
+		// img
+		// 	&:hover, &:focus, &:active
+		// 		filter: invert(37%) sepia(71%) saturate(3678%) hue-rotate(206deg) brightness(77%) contrast(97%)

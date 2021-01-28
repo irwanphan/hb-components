@@ -27,17 +27,6 @@
         <label for="menu-4" class="main-thumb-menu-label"><img src="img/shopping_cart-24px.svg" alt=""></label>
     </nav>
 
-    <script>
-        function cbChange(obj) {
-            let updateCheck = obj.checked;
-            var cbs = document.getElementsByClassName("main-thumb-menu");
-            for (var i = 0; i < cbs.length; i++) {
-                cbs[i].checked = false;
-            }
-            obj.checked = updateCheck;
-        }
-    </script>
-
     <div class="top">
         <div class="top-badges">
             <a href="" class="badge-wa">
@@ -82,7 +71,7 @@
         </div>
     </div>
 
-    <ul class="header-menu">
+    <ul class="header-menu" id="header-menu">
         <li class="level-1 have-children desktop-only">
             <a href="" class="">home</a>
         </li>
@@ -282,6 +271,41 @@
 
     
 </header>
+
+<script>
+    function cbChange(obj) {
+        let updateCheck = obj.checked;
+        var cbs = document.getElementsByClassName("main-thumb-menu");
+        for (var i = 0; i < cbs.length; i++) {
+            cbs[i].checked = false;
+        }
+        obj.checked = updateCheck;
+    }
+    
+    let scrollpos = window.scrollY
+    const header = document.querySelector(".header-menu")
+    const badges = document.querySelector(".top-badges")
+    // const header_height = header.offsetHeight
+    const header_height = 140
+
+    const add_class_on_scroll = () => {
+        header.classList.add("sticky")
+        badges.classList.add("scrolled")
+    }
+    const remove_class_on_scroll = () => {
+        header.classList.remove("sticky")
+        badges.classList.remove("scrolled")
+    }
+
+    window.addEventListener('scroll', function() { 
+        scrollpos = window.scrollY;
+
+        if (scrollpos >= header_height) { add_class_on_scroll() }
+        else { remove_class_on_scroll() }
+
+        console.log(scrollpos)
+    })
+</script>
 
 </body>
 </html>
