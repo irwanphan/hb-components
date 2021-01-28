@@ -59,7 +59,8 @@ header
 				span
 					@extend .desktop-only
 			&.scrolled
-				top: 50px
+				@media screen and ( min-width: 641px )
+					top: 50px
 		span.right
 			height: 40px
 			line-height: 40px
@@ -377,7 +378,25 @@ header
 		// img
 		// 	&:hover, &:focus, &:active
 		// 		filter: invert(37%) sepia(71%) saturate(3678%) hue-rotate(206deg) brightness(77%) contrast(97%)
-	// &.sticky
-	// 	position: fixed
-	// 	top: 0
-	// 	width: 100%
+	&.sticky
+		position: fixed
+		bottom: 0
+		width: 100%
+		~
+			.middle
+				.account-menu
+					bottom: 50px
+					position: fixed
+					top: auto
+				.search-container
+					bottom: 50px
+					position: fixed
+					top: auto
+				.shopping-cart-container
+					bottom: 50px
+					position: fixed
+					top: auto
+			.header-menu
+				bottom: 50px
+				position: fixed
+				top: auto
